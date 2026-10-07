@@ -35,8 +35,9 @@ public abstract class TestBase {
         options.addArguments("--window-size=1600,1000", "--disable-gpu");
 
         driver = new ChromeDriver(options);
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // Запас на возможные сетевые стопы (эпизоды ~30 с фиксировались на маршруте к сайту)
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     @AfterEach

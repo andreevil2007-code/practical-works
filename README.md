@@ -2,7 +2,7 @@
 
 Учебные практические работы 4 курса (тестирование ПО).
 
-## Практическая №12 — UI-автотесты «HerokuApp»
+## Практическая №2 — UI-автотесты «HerokuApp»
 
 Автоматизация тестов для сайта <https://the-internet.herokuapp.com>
 на **Java 17 + Selenium 4 + JUnit 5 + Maven**, паттерн **Page Object**.

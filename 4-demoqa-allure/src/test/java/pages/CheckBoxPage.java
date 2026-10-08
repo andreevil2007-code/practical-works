@@ -18,6 +18,12 @@ public class CheckBoxPage extends BasePage {
             By.cssSelector(".rc-tree-checkbox[aria-label='Select Desktop']");
     private static final By RESULT = By.id("result");
 
+    /** Корневой узел дерева Home (его чекбоксы детей видны только после раскрытия). */
+    private static final By HOME_NODE =
+            By.xpath("//div[@role='treeitem' and .//span[@title='Home']]");
+    private static final By HOME_SWITCHER = By.xpath(
+            "//div[@role='treeitem' and .//span[@title='Home']]//span[contains(@class,'rc-tree-switcher')]");
+
     public CheckBoxPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
@@ -27,8 +33,19 @@ public class CheckBoxPage extends BasePage {
         return this;
     }
 
+    /** Раскрыть корневой узел Home (в свёрнутом состоянии чекбоксы детей не видны). */
+    public CheckBoxPage expandHome() {
+        String expanded = el(HOME_NODE).getAttribute("aria-expanded");
+        if (!"true".equals(expanded)) {
+            Allure.step("Раскрыть корневой узел дерева Home");
+            click(HOME_SWITCHER);
+        }
+        return this;
+    }
+
     /** Отметить чекбокс Desktop (выделяет и вложенные элементы). */
     public CheckBoxPage selectDesktop() {
+        expandHome();
         Allure.step("Отметить чекбокс Desktop");
         click(DESKTOP_CHECKBOX);
         return this;
@@ -36,6 +53,7 @@ public class CheckBoxPage extends BasePage {
 
     /** Снять чекбокс Desktop. */
     public CheckBoxPage unselectDesktop() {
+        expandHome();
         Allure.step("Снять чекбокс Desktop");
         click(DESKTOP_CHECKBOX);
         return this;

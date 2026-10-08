@@ -54,3 +54,44 @@ mvn test -Dheadless=true  # без окна браузера (для CI)
 ### Ветка и Pull Request
 
 Ветка работ: `feature/ИСП9-48ВБ_Андреев_selenium`, все изменения — через PR в `master`.
+
+## Практическая №13 — UI-автотесты «Swag Labs»
+
+Автоматизация тестов для сайта <https://www.saucedemo.com/>
+на **Java 17 + Selenium 4 + JUnit 5 + Maven**, паттерн **Page Object**.
+
+### Структура
+
+```
+3-saucedemo/
+├── pom.xml
+└── src/test/java/
+    ├── utils/Constants.java    демо-учётки, ожидаемые тексты, таймауты
+    ├── pages/                  Page Object (4 страницы + BasePage)
+    │   ├── BasePage.java
+    │   ├── LoginPage.java
+    │   ├── InventoryPage.java
+    │   ├── CartPage.java
+    │   └── CheckoutPage.java
+    └── tests/                  9 тестов: вход, корзина, чекаут, сортировки
+        ├── TestBase.java       драйвер, скриншоты, driver.quit()
+        ├── LoginTests.java     1 позитив + 2 негативных
+        ├── CartTests.java      добавление/удаление товара
+        ├── CheckoutTests.java  полный заказ + валидация пустого поля
+        └── SortingTests.java   сортировка по названию и цене
+```
+
+### Запуск
+
+```bash
+cd 3-saucedemo
+mvn clean test            # обычный режим (откроется Chrome)
+mvn test -Dheadless=true  # без окна браузера
+```
+
+Отчёты Surefire: `3-saucedemo/target/surefire-reports/`,
+скриншоты: `3-saucedemo/target/screenshots/`.
+
+### Ветка и Pull Request
+
+Ветка работ: `feature/ИСП9-48ВБ_Андреев_saucedemo`, все изменения — через PR в `master`.

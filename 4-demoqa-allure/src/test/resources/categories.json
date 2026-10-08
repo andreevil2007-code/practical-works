@@ -1,24 +1,20 @@
 [
   {
     "name": "Ошибки утверждений (AssertionError)",
-    "matchedErrors": [
-      { "message": ".*AssertionError.*" },
-      { "message": ".*expected \\[.*" }
-    ]
+    "messageRegex": ".*AssertionError.*",
+    "matchedStatuses": ["failed"],
+    "flaky": false
   },
   {
-    "name": "Таймауты явных ожиданий (Timeout)",
-    "matchedErrors": [
-      { "message": ".*TimeoutException.*" }
-    ]
+    "name": "Таймауты явных ожиданий (TimeoutException)",
+    "traceRegex": ".*TimeoutException.*",
+    "matchedStatuses": ["broken", "failed"],
+    "flaky": false
   },
   {
-    "name": "Проблемы с элементами (NoSuch/Stale/Intercepted)",
-    "matchedErrors": [
-      { "message": ".*NoSuchElementException.*" },
-      { "message": ".*StaleElementReference.*" },
-      { "message": ".*ElementClickIntercepted.*" },
-      { "message": ".*NoSuchWindowException.*" }
-    ]
+    "name": "Проблемы с элементами (NoSuchElementException)",
+    "messageRegex": ".*NoSuchElementException.*",
+    "matchedStatuses": ["broken", "failed"],
+    "flaky": false
   }
 ]

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Ошибки утверждений (AssertionError)",
+    "matchedErrors": [
+      { "message": ".*AssertionError.*" },
+      { "message": ".*expected \\[.*" }
+    ]
+  },
+  {
+    "name": "Таймауты явных ожиданий (Timeout)",
+    "matchedErrors": [
+      { "message": ".*TimeoutException.*" }
+    ]
+  },
+  {
+    "name": "Проблемы с элементами (NoSuch/Stale/Intercepted)",
+    "matchedErrors": [
+      { "message": ".*NoSuchElementException.*" },
+      { "message": ".*StaleElementReference.*" },
+      { "message": ".*ElementClickIntercepted.*" },
+      { "message": ".*NoSuchWindowException.*" }
+    ]
+  }
+]

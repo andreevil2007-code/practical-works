@@ -95,3 +95,35 @@ mvn test -Dheadless=true  # без окна браузера
 ### Ветка и Pull Request
 
 Ветка работ: `feature/ИСП9-48ВБ_Андреев_saucedemo`, все изменения — через PR в `master`.
+
+## Практическая №4 — Allure и кроссбраузерные автотесты DemoQA
+
+Автотесты для <https://demoqa.com> на **Java 17 + Selenium 4 + TestNG + Maven**,
+отчётность **Allure** (шаги, метки, вложения, Environment), кроссбраузерный
+параллельный прогон **Chrome + Edge**.
+
+### Структура
+
+```
+4-demoqa-allure/
+├── pom.xml                       TestNG + allure-testng + allure-maven + профиль crossbrowser
+└── src/test/
+    ├── java/
+    │   ├── utils/                Constants, DriverFactory, AllureAttachments
+    │   ├── pages/                7 Page Object + BasePage (шаги Allure, явные ожидания)
+    │   └── tests/                BaseTest + 7 тест-классов (11 тестов)
+    └── resources/                testng.xml, allure.properties, environment, categories
+```
+
+### Запуск
+
+```bash
+cd 4-demoqa-allure
+mvn clean test                      # Chrome + Edge параллельно (headless)
+mvn allure:report                   # HTML-отчёт → target/site/allure-maven/
+mvn test -P"!crossbrowser" -Dbrowser=chrome   # один браузер
+```
+
+### Ветка и Pull Request
+
+Ветка работ: `feature/ИСП9-48ВБ_Андреев_demoqa_allure`, все изменения — через PR в `master`.

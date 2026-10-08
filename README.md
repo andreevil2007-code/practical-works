@@ -55,7 +55,7 @@ mvn test -Dheadless=true  # без окна браузера (для CI)
 
 Ветка работ: `feature/ИСП9-48ВБ_Андреев_selenium`, все изменения — через PR в `master`.
 
-## Практическая №13 — UI-автотесты «Swag Labs»
+## Практическая №3 — UI-автотесты «Swag Labs»
 
 Автоматизация тестов для сайта <https://www.saucedemo.com/>
 на **Java 17 + Selenium 4 + JUnit 5 + Maven**, паттерн **Page Object**.

@@ -7,7 +7,7 @@
     <groupId>com.practice</groupId>
     <artifactId>saucedemo-ui-tests</artifactId>
     <version>1.0.0</version>
-    <name>Практическая №13 - UI автотесты saucedemo.com</name>
+    <name>Практическая №3 - UI автотесты saucedemo.com</name>
 
     <properties>
         <maven.compiler.release>17</maven.compiler.release>

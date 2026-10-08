@@ -1,4 +1,4 @@
-# Практическая №13 — UI-автотесты «Swag Labs» (saucedemo.com)
+# Практическая №3 — UI-автотесты «Swag Labs» (saucedemo.com)
 
 Автоматизация тестов для сайта <https://www.saucedemo.com/>
 на **Java 17 + Selenium 4 + JUnit 5 + Maven**, паттерн **Page Object**.

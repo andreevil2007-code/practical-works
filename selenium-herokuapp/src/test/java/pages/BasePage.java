@@ -18,7 +18,7 @@ public abstract class BasePage {
     public static final String BASE_URL = "https://the-internet.herokuapp.com";
 
     /** Таймаут явных ожиданий. */
-    protected static final Duration TIMEOUT = Duration.ofSeconds(10);
+    protected static final Duration TIMEOUT = Duration.ofSeconds(15);
 
     protected final WebDriver driver;
     protected final WebDriverWait wait;

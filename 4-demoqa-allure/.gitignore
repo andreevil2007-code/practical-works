@@ -1,0 +1,4 @@
+﻿target/
+
+# скачанный дистрибутив Allure CLI
+.allure/

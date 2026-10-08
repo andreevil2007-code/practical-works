@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ошибки утверждений (AssertionError)",
+    "messageRegex": ".*AssertionError.*",
+    "matchedStatuses": ["failed"],
+    "flaky": false
+  },
+  {
+    "name": "Таймауты явных ожиданий (TimeoutException)",
+    "traceRegex": ".*TimeoutException.*",
+    "matchedStatuses": ["broken", "failed"],
+    "flaky": false
+  },
+  {
+    "name": "Проблемы с элементами (NoSuchElementException)",
+    "messageRegex": ".*NoSuchElementException.*",
+    "matchedStatuses": ["broken", "failed"],
+    "flaky": false
+  }
+]
